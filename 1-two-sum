@@ -1,0 +1,20 @@
+// two-sum
+// https://leetcode.com/problems/two-sum/
+
+impl Solution {
+    pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
+
+        for i in 0..nums.len() {                                // for each pair of elements,
+            for j in (i + 1)..nums.len() {
+
+                if nums[i] + nums[j] == target {                    // Check if the pair sums up to the target
+                    return vec![i as i32, j as i32];                  // if so, return it
+                }
+            }
+        }
+
+
+        vec![]  // if we get this far, there is no solution
+                // and it returns an empty vector
+    }
+}
