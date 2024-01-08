@@ -1,0 +1,14 @@
+impl Solution {
+    pub fn remove_duplicates(nums: &mut Vec<i32>) -> i32 {
+
+        let mut index = 1;
+
+        for i in 1..nums.len() { // counts unique indices
+            if nums[i] != nums[i-1] {
+                nums[index] = nums[i];
+                index += 1;
+            }
+        }
+
+        index as i32
+}}
