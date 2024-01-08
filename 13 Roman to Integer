@@ -1,0 +1,30 @@
+impl Solution {
+    pub fn roman_to_int(s: String) -> i32 {
+
+        let mut result = 0;
+        let mut prev_value = 0;
+
+        for c in s.chars() {
+            let current_value = match c { // this syntax is beautiful
+                'I' => 1,
+                'V' => 5,
+                'X' => 10,
+                'L' => 50,
+                'C' => 100,
+                'D' => 500,
+                'M' => 1000,
+                _ => 0, // invalid character
+            };
+
+            result += if current_value > prev_value { // account for negatives
+                current_value - 2 * prev_value
+            } else {
+                current_value
+            };
+
+            prev_value = current_value;
+        }
+
+        result
+    }
+}
