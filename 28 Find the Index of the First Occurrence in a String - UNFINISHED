@@ -1,0 +1,13 @@
+impl Solution {
+    pub fn str_str(haystack: String, needle: String) -> i32 {
+
+        // for every position k of needle in haystack,
+            // if needle[0+k] = haystack[0+k]
+                // for every char index i in needle
+                    // needle[i] = haystack[i]
+                // return first index of the matching pair
+                
+        // return -1
+
+    }
+}
